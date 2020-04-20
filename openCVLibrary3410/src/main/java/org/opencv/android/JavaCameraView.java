@@ -102,6 +102,8 @@ public class JavaCameraView extends CameraBridgeViewBase implements PreviewCallb
                         Camera.CameraInfo cameraInfo = new Camera.CameraInfo();
                         for (int camIdx = 0; camIdx < Camera.getNumberOfCameras(); ++camIdx) {
                             Camera.getCameraInfo( camIdx, cameraInfo );
+                            //后置Camera.CameraInfo.CAMERA_FACING_BACK
+                            //前置CAMERA_FACING_FONT
                             if (cameraInfo.facing == Camera.CameraInfo.CAMERA_FACING_BACK) {
                                 localCameraIndex = camIdx;
                                 break;

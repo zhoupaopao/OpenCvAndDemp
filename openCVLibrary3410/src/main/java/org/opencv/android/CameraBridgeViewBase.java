@@ -14,6 +14,7 @@ import android.content.DialogInterface;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -431,6 +432,8 @@ public abstract class CameraBridgeViewBase extends SurfaceView implements Surfac
                     mFpsMeter.measure();
                     mFpsMeter.draw(canvas, 20, 30);
                 }
+                //全屏设置
+                canvas.drawBitmap(mCacheBitmap, new Rect(0,0,mCacheBitmap.getWidth(), mCacheBitmap.getHeight()),new Rect(0,0,canvas.getWidth(),canvas.getHeight()), new Paint());
                 getHolder().unlockCanvasAndPost(canvas);
             }
         }
